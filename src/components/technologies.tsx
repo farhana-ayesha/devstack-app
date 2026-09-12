@@ -19,10 +19,10 @@ export default function Technologies() {
     loadTechs();
   }, []);
 
-  const isAdded = (name: string) => stack.some((item) => item.name === name);
+  const isAdded = (id: string) => stack.some((item) => item.id === id);
 
   function addToStack(tech: Tech) {
-    if (isAdded(tech.name)) {
+    if (isAdded(tech.id)) {
       toast.warning(`${tech.name} is already in your stack`);
       return;
     }
@@ -30,9 +30,10 @@ export default function Technologies() {
     toast.success(`${tech.name} added to stack`);
   }
 
-  function removeFromStack(name: string) {
-    setStack(stack.filter((item) => item.name !== name));
-    toast.info(`${name} removed from stack`);
+  function removeFromStack(id: string) {
+    const tech = stack.find((item) => item.id === id);
+    setStack(stack.filter((item) => item.id !== id));
+    if (tech) toast.info(`${tech.name} removed from stack`);
   }
 
   function removeAll() {
@@ -56,9 +57,9 @@ export default function Technologies() {
           <div className="lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {techs.map((tech) => (
               <TechCard
-                key={tech.name}
+                key={tech.id}
                 tech={tech}
-                added={isAdded(tech.name)}
+                added={isAdded(tech.id)}
                 onAdd={addToStack}
               />
             ))}

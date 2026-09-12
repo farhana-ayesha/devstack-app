@@ -1,9 +1,8 @@
 import type { Tech } from "./TechCard";
-import { iconMap } from "./iconMap";
 
 type StackListProps = {
   stack: Tech[];
-  onRemove: (name: string) => void;
+  onRemove: (id: string) => void;
   onRemoveAll: () => void;
 };
 
@@ -27,21 +26,18 @@ export default function StackList({ stack, onRemove, onRemoveAll }: StackListPro
         </div>
       ) : (
         <div className="mt-4 flex flex-col gap-3">
-          {stack.map((item) => {
-            const Icon = iconMap[item.icon as keyof typeof iconMap];
-            return (
-              <div key={item.name} className="flex items-center justify-between border rounded-lg p-3">
-                <div className="flex items-center gap-2">
-                  <Icon className={`text-xl ${item.iconColor}`} />
-                  <div>
-                    <p className="text-sm font-semibold">{item.name}</p>
-                    <p className="text-xs text-gray-500">{item.tag1}</p>
-                  </div>
+          {stack.map((item) => (
+            <div key={item.id} className="flex items-center justify-between border rounded-lg p-3">
+              <div className="flex items-center gap-2">
+                <img src={item.icon} alt={item.name} className="w-6 h-6" />
+                <div>
+                  <p className="text-sm font-semibold">{item.name}</p>
+                  <p className="text-xs text-gray-500">{item.category}</p>
                 </div>
-                <button onClick={() => onRemove(item.name)}>✕</button>
               </div>
-            );
-          })}
+              <button onClick={() => onRemove(item.id)}>✕</button>
+            </div>
+          ))}
 
           <button
             onClick={onRemoveAll}
