@@ -1,3 +1,6 @@
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 export default function Footer() {
   return (
     <footer className="border-t bg-gray-50">
@@ -13,6 +16,19 @@ export default function Footer() {
         <p className="text-sm text-gray-500 mt-3">
           Tools, technologies, and resources for developers building modern software.
         </p>
+
+        <div className="flex gap-3 mt-4">
+          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-white">
+            <FaGithub />
+          </a>
+          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-white">
+            <FaXTwitter />
+          </a>
+          <a href="#" className="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-white">
+            <FaLinkedinIn />
+          </a>
+        </div>
+
       </div>
     </footer>
   );
