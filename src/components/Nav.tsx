@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { brandGradient } from "../theme";
-import logo from "../assets/logo-text.png"
+import logo from "../assets/logo-text.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-50 bg-white border-b">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
+          <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
+          <span className="block w-6 h-0.5 bg-black"></span>
+        </button>
 
         <img src={logo} alt="Dev Stack logo" className="h-9" />
 
@@ -19,8 +24,8 @@ export default function Navbar() {
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div className="hidden md:flex gap-4 items-center">
-          <a href="#signin" className="text-sm font-medium">Sign In</a>
+        <div className="flex gap-4 items-center">
+          <a href="#signin" className="hidden md:block text-sm font-medium">Sign In</a>
           <a
             href="#signup"
             className={`${brandGradient} text-white text-sm font-semibold px-5 py-2 rounded-full`}
@@ -28,12 +33,6 @@ export default function Navbar() {
             Sign Up
           </a>
         </div>
-
-        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
-          <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
-          <span className="block w-6 h-0.5 bg-black"></span>
-        </button>
       </div>
 
       {menuOpen && (
@@ -44,12 +43,6 @@ export default function Navbar() {
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <a href="#signin">Sign In</a>
-          <a
-            href="#signup"
-            className={`${brandGradient} text-white text-center py-2 rounded-full`}
-          >
-            Sign Up
-          </a>
         </div>
       )}
     </header>
