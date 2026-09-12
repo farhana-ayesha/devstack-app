@@ -1,11 +1,21 @@
-
 import { useState } from "react";
+import { FaReact, FaVuejs, FaNodeJs, FaJava, FaDocker } from "react-icons/fa";
+import {
+  SiSvelte,
+  SiNextdotjs,
+  SiPostgresql,
+  SiRedis,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 import TechCard, { type Tech } from "./TechCard";
 import StackList from "./StackList";
 
 const techs: Tech[] = [
   {
-    icon: "⚛️",
+    icon: FaReact,
+    iconColor: "text-sky-500",
     badge: "Popular",
     badgeColor: "bg-pink-100 text-pink-600",
     name: "React",
@@ -15,7 +25,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "🟢",
+    icon: FaVuejs,
+    iconColor: "text-green-600",
     badge: "Versatile",
     badgeColor: "bg-green-100 text-green-600",
     name: "Vue.js",
@@ -25,7 +36,8 @@ const techs: Tech[] = [
     rating: "4.8",
   },
   {
-    icon: "🔥",
+    icon: SiSvelte,
+    iconColor: "text-orange-600",
     badge: "Fast",
     badgeColor: "bg-orange-100 text-orange-600",
     name: "Svelte",
@@ -35,7 +47,8 @@ const techs: Tech[] = [
     rating: "4.8",
   },
   {
-    icon: "▲",
+    icon: SiNextdotjs,
+    iconColor: "text-black",
     badge: "SSR / Edge",
     badgeColor: "bg-purple-100 text-purple-600",
     name: "Next.js",
@@ -45,7 +58,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "🟩",
+    icon: FaNodeJs,
+    iconColor: "text-green-600",
     badge: "Standard",
     badgeColor: "bg-green-100 text-green-600",
     name: "Node.js",
@@ -55,7 +69,8 @@ const techs: Tech[] = [
     rating: "4.8",
   },
   {
-    icon: "🐘",
+    icon: SiPostgresql,
+    iconColor: "text-blue-700",
     badge: "Top SQL",
     badgeColor: "bg-blue-100 text-blue-600",
     name: "PostgreSQL",
@@ -65,7 +80,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "🧱",
+    icon: SiRedis,
+    iconColor: "text-red-600",
     badge: "Cache",
     badgeColor: "bg-red-100 text-red-500",
     name: "Redis",
@@ -75,7 +91,8 @@ const techs: Tech[] = [
     rating: "4.8",
   },
   {
-    icon: "🟨",
+    icon: SiJavascript,
+    iconColor: "text-yellow-500",
     badge: "Ubiquitous",
     badgeColor: "bg-orange-100 text-orange-600",
     name: "JavaScript",
@@ -85,7 +102,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "🔷",
+    icon: SiTypescript,
+    iconColor: "text-blue-600",
     badge: "Essential",
     badgeColor: "bg-blue-100 text-blue-600",
     name: "TypeScript",
@@ -95,7 +113,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "☕",
+    icon: FaJava,
+    iconColor: "text-red-700",
     badge: "Robust",
     badgeColor: "bg-blue-100 text-blue-600",
     name: "Java",
@@ -105,7 +124,8 @@ const techs: Tech[] = [
     rating: "4.6",
   },
   {
-    icon: "🌊",
+    icon: SiTailwindcss,
+    iconColor: "text-sky-400",
     badge: "Modern",
     badgeColor: "bg-green-100 text-green-600",
     name: "Tailwind CSS",
@@ -115,7 +135,8 @@ const techs: Tech[] = [
     rating: "4.9",
   },
   {
-    icon: "🐳",
+    icon: FaDocker,
+    iconColor: "text-blue-500",
     badge: "Containers",
     badgeColor: "bg-blue-100 text-blue-600",
     name: "Docker",
@@ -127,7 +148,6 @@ const techs: Tech[] = [
 ];
 
 export default function Technologies() {
-  // stack ta ekhane store kori
   const [stack, setStack] = useState<Tech[]>([]);
 
   const isAdded = (name: string) => stack.some((item) => item.name === name);
@@ -147,7 +167,6 @@ export default function Technologies() {
 
   return (
     <section id="technologies" className="max-w-7xl mx-auto px-6 py-16">
-      {/* heading */}
       <h2 className="text-3xl font-extrabold">
         Explore the <span className="text-pink-600">Technologies</span>
       </h2>
@@ -155,16 +174,10 @@ export default function Technologies() {
         Pick one technology per category to build your ideal stack.
       </p>
 
-      {/* content: cards grid + sidebar */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {techs.map((tech) => (
-            <TechCard
-              key={tech.name}
-              tech={tech}
-              added={isAdded(tech.name)}
-              onAdd={addToStack}
-            />
+            <TechCard key={tech.name} tech={tech} added={isAdded(tech.name)} onAdd={addToStack} />
           ))}
         </div>
 

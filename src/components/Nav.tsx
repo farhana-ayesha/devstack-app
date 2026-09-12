@@ -1,4 +1,4 @@
-//import logo from "../assets/logo-text.png"
+import logo from "../assets/logo-text.png"
 
 import { useState } from "react";
 
@@ -8,15 +8,7 @@ export default function Navbar() {
   return (
     <header className="border-b">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* logo */}
-        <div className="flex items-center gap-2">
-          <span className="bg-gradient-to-br from-purple-600 to-pink-500 text-white font-bold text-sm w-9 h-9 flex items-center justify-center rounded-lg">
-            DS
-          </span>
-          <span className="font-bold text-lg">
-            Dev <span className="text-pink-600">Stack</span>
-          </span>
-        </div>
+        <img src={logo} alt="DevStack Logo" className="h-8" />
 
         {/* nav links - desktop */}
         <ul className="hidden md:flex gap-8 text-sm font-medium">
