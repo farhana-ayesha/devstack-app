@@ -1,7 +1,7 @@
-import type { IconType } from "react-icons";
+import { iconMap } from "./iconMap";
 
 export type Tech = {
-  icon: IconType;
+  icon: string;
   iconColor: string;
   badge: string;
   badgeColor: string;
@@ -12,14 +12,14 @@ export type Tech = {
   rating: string;
 };
 
-type Props = {
+type TechCardProps = {
   tech: Tech;
   added: boolean;
   onAdd: (tech: Tech) => void;
 };
 
-export default function TechCard({ tech, added, onAdd }: Props) {
-  const Icon = tech.icon;
+export default function TechCard({ tech, added, onAdd }: TechCardProps) {
+  const Icon = iconMap[tech.icon as keyof typeof iconMap];
 
   return (
     <div className="border rounded-xl p-4">
@@ -41,8 +41,7 @@ export default function TechCard({ tech, added, onAdd }: Props) {
 
       <button
         onClick={() => onAdd(tech)}
-        disabled={added}
-        className="mt-4 w-full bg-slate-800 text-white text-sm font-semibold py-2 rounded-lg disabled:opacity-50"
+        className="mt-4 w-full bg-slate-800 text-white text-sm font-semibold py-2 rounded-lg"
       >
         {added ? "Added" : "Add to Stack"}
       </button>

@@ -1,4 +1,5 @@
-import heroImage from "../assets/banner-stack.png"
+import stackImage from "../assets/banner-stack.png";
+import { brandGradient, brandGradientText } from "../theme";
 
 export default function Hero() {
   return (
@@ -11,9 +12,7 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
           Build Your Ideal
           <br />
-          <span className="bg-gradient-to-r from-orange-500 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-            Development Stack
-          </span>
+          <span className={brandGradientText}>Development Stack</span>
         </h1>
 
         <p className="mt-6 text-lg text-gray-600 max-w-md mx-auto md:mx-0">
@@ -25,7 +24,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
           <a
             href="#technologies"
-            className="bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold text-sm px-6 py-3 rounded-full"
+            className={`${brandGradient} text-white font-semibold text-sm px-6 py-3 rounded-full`}
           >
             Explore Technologies
           </a>
@@ -41,9 +40,9 @@ export default function Hero() {
       {/* right side - image */}
       <div className="flex-1 flex justify-center">
         <img
-          src={heroImage}
-          alt="Banner Stack"
-          className="w-72 sm:w-96"
+          src={stackImage}
+          alt="Development Stack Illustration"
+          className="w-full max-w-md"
         />
       </div>
     </section>

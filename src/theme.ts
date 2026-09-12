@@ -1,0 +1,2 @@
+export const brandGradient = "bg-gradient-to-r from-orange-500 via-pink-600 to-violet-600";
+export const brandGradientText = "bg-gradient-to-r from-orange-500 via-pink-600 to-violet-600 bg-clip-text text-transparent";

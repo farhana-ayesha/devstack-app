@@ -1,6 +1,5 @@
-import logo from "../assets/logo-text.png"
-
 import { useState } from "react";
+import { brandGradient } from "../theme";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,9 +7,15 @@ export default function Navbar() {
   return (
     <header className="border-b">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <img src={logo} alt="DevStack Logo" className="h-8" />
+        <div className="flex items-center gap-2">
+          <span className={`${brandGradient} text-white font-bold text-sm w-9 h-9 flex items-center justify-center rounded-lg`}>
+            DS
+          </span>
+          <span className="font-bold text-lg">
+            Dev <span className="text-pink-600">Stack</span>
+          </span>
+        </div>
 
-        {/* nav links - desktop */}
         <ul className="hidden md:flex gap-8 text-sm font-medium">
           <li><a href="#home">Home</a></li>
           <li><a href="#technologies">Technologies</a></li>
@@ -19,18 +24,16 @@ export default function Navbar() {
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        {/* buttons - desktop */}
         <div className="hidden md:flex gap-4 items-center">
           <a href="#signin" className="text-sm font-medium">Sign In</a>
           <a
             href="#signup"
-            className="bg-gradient-to-r from-pink-600 to-purple-600 text-white text-sm font-semibold px-5 py-2 rounded-full"
+            className={`${brandGradient} text-white text-sm font-semibold px-5 py-2 rounded-full`}
           >
             Sign Up
           </a>
         </div>
 
-        {/* hamburger button - mobile */}
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
           <span className="block w-6 h-0.5 bg-black mb-1.5"></span>
@@ -38,9 +41,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* mobile menu - shows only when menuOpen is true */}
       {menuOpen && (
-        <div className="w-full bg-white flex flex-col gap-4 p-6 md:hidden">
+        <div className="md:hidden flex flex-col gap-4 p-6">
           <a href="#home">Home</a>
           <a href="#technologies">Technologies</a>
           <a href="#projects">Projects</a>
@@ -49,7 +51,7 @@ export default function Navbar() {
           <a href="#signin">Sign In</a>
           <a
             href="#signup"
-            className="bg-gradient-to-r from-pink-600 to-purple-600 text-white text-center py-2 rounded-full"
+            className={`${brandGradient} text-white text-center py-2 rounded-full`}
           >
             Sign Up
           </a>
