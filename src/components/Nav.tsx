@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { brandGradient } from "../theme";
+import logo from "../assets/logo-text.png"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,14 +8,8 @@ export default function Navbar() {
   return (
     <header className="border-b">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <span className={`${brandGradient} text-white font-bold text-sm w-9 h-9 flex items-center justify-center rounded-lg`}>
-            DS
-          </span>
-          <span className="font-bold text-lg">
-            Dev <span className="text-pink-600">Stack</span>
-          </span>
-        </div>
+
+        <img src={logo} alt="Dev Stack logo" className="h-9" />
 
         <ul className="hidden md:flex gap-8 text-sm font-medium">
           <li><a href="#home">Home</a></li>
