@@ -8,7 +8,7 @@ type StackListProps = {
 
 export default function StackList({ stack, onRemove, onRemoveAll }: StackListProps) {
   return (
-    <div className="border rounded-xl p-6 h-fit">
+    <div className="border border-gray-100 rounded-xl p-6 h-fit">
       <h3 className="font-bold">Your Stack</h3>
       <p className="text-sm text-gray-500 mt-1">
         {stack.length === 0
@@ -27,7 +27,7 @@ export default function StackList({ stack, onRemove, onRemoveAll }: StackListPro
       ) : (
         <div className="mt-4 flex flex-col gap-3">
           {stack.map((item) => (
-            <div key={item.id} className="flex items-center justify-between border rounded-lg p-3">
+          <div key={item.id} className="flex items-center justify-between border border-gray-100 rounded-lg p-3">  
               <div className="flex items-center gap-2">
                 <img src={item.icon} alt={item.name} className="w-6 h-6" />
                 <div>

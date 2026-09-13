@@ -6,7 +6,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           <span className="block w-6 h-0.5 bg-black mb-1.5"></span>

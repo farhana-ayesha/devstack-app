@@ -4,7 +4,7 @@ import logo from "../assets/logo-text.png"
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-gray-50">
+    <footer className="border-t border-gray-100 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
     <div>
          
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
     </div>
 
-           <div className="border-t border-gray-200">
+           <div className="border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
           <p>© 2026 Dev Stack. All rights reserved.</p>
           <div className="flex gap-4">

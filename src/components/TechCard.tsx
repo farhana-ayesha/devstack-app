@@ -18,7 +18,7 @@ type TechCardProps = {
 
 export default function TechCard({ tech, added, onAdd }: TechCardProps) {
   return (
-    <div className="border rounded-xl p-4">
+    <div className="border border-gray-100 rounded-xl p-4">
       <div className="flex items-center justify-between">
         <img src={tech.icon} alt={tech.name} className="w-8 h-8" />
         <span className={`text-xs font-semibold px-2 py-1 rounded-full ${tech.badgeColor}`}>
