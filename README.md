@@ -23,8 +23,8 @@ You get a grid of tech cards (React, Vue, Node.js, PostgreSQL, Docker, etc.) eac
 
 ## Links
 
-- GitHub Repository: <!-- your repo link -->
-- Live Site: <!-- your deployed link -->
+- GitHub Repository: https://github.com/farhana-ayesha/devstack-app
+- Live Site: https://devstack-app.vercel.app/
 
 ---
 
